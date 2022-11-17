@@ -2,9 +2,9 @@
 # Makefile Options
 # ----------------------------
 
-NAME = DEMO
+NAME = TI84RPG
 ICON = icon.png
-DESCRIPTION = "CE C Toolchain Demo"
+DESCRIPTION = "An rpg for the ti84CE"
 COMPRESSED = NO
 ARCHIVED = NO
 
