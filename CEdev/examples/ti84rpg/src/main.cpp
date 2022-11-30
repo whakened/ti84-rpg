@@ -15,7 +15,7 @@
 
 using namespace ti::literals; // namespace std; otherwise
 
-void os_Output(string text, int row, int column) {
+void os_Output(char text, int row, int column) {
 	os_SetCursorPos(row, column);
 	os_PutStrFull(text);
 }
@@ -30,7 +30,7 @@ void menu(char options[]) {
 		}
 		while (!keyPressed) {
 			uint8_t key = os_GetCSC();
-			if (key ~= sk_Enter) {
+			if (key != sk_Enter) {
 				if (key == sk_Down && selected > 0) {
 					selected -= 1;
 					keyPressed = true;
