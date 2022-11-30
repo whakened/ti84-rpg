@@ -34,7 +34,7 @@ void menu(char options[]) {
 				if (key == sk_Down && selected > 0) {
 					selected -= 1;
 					keyPressed = true;
-				} else if (key == sk_Up && selected < sizeof(options) / sizeof(string)) {
+				} else if (key == sk_Up && selected < sizeof(options) / sizeof(char)) {
 					selected += 1;
 					keyPressed = true;
 				}
@@ -53,7 +53,7 @@ int main(void) {
 		unsigned int weapon = 1;
 		char inventory[14][3];
 	  } playerData;
-	char choices[3] = {"One", "Two", "Three"};
+	char choices[3][] = {"One", "Two", "Three"};
 	menu(choices);
 	/*string input;    //declare this variable as a string
 	cin >> input;   //get input from console as variable
