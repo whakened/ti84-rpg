@@ -7,7 +7,7 @@
  *--------------------------------------
 */
 
-#include <string>
+#include <string.h>
 
 #include <ti/getcsc.h>
 #include <ti/tokens.h>
