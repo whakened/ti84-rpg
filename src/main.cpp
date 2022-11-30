@@ -13,7 +13,7 @@
 #include <ti/tokens.h>
 #include <ti/screen.h>
 
-using namespace std;
+using namespace ti::literals; // namespace std; otherwise
 
 int test(void) {
 	os_PutStrFull("MAYBE");
@@ -59,7 +59,7 @@ int main(void) {
 		string inventory[14][3];
 	  } playerData;
 	string choices[3] = {"One", "Two", "Three"};
-	menu(choices)
+	menu(choices);
 	/*string input;    //declare this variable as a string
 	cin >> input;   //get input from console as variable
 	cout << input;    //output variable value to console*/
