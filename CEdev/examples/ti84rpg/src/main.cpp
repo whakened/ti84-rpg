@@ -20,7 +20,7 @@ void os_Output(string text, int row, int column) {
 	os_PutStrFull(text);
 }
 
-void menu(string options) {
+void menu(char options[]) {
 	bool entered = false;
 	bool keyPressed = false;
 	int selected = 0;
@@ -29,7 +29,7 @@ void menu(string options) {
 			os_Output(i + ": " + options[i], i, 0);
 		}
 		while (!keyPressed) {
-			key = os_GetCSC();
+			uint8_t key = os_GetCSC();
 			if (key ~= sk_Enter) {
 				if (key == sk_Down && selected > 0) {
 					selected -= 1;
@@ -51,9 +51,9 @@ int main(void) {
 	struct {
 		unsigned int health = 10;
 		unsigned int weapon = 1;
-		string inventory[14][3];
+		char inventory[14][3];
 	  } playerData;
-	string choices[3] = {"One", "Two", "Three"};
+	char choices[3] = {"One", "Two", "Three"};
 	menu(choices);
 	/*string input;    //declare this variable as a string
 	cin >> input;   //get input from console as variable
