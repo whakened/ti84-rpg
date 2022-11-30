@@ -23,7 +23,7 @@ void os_Output(string text, int row, int column) {
 void menu(char options[]) {
 	bool entered = false;
 	bool keyPressed = false;
-	int selected = 0;
+	uint8_t selected = 0;
 	while (!entered) {
 		for (int i : options) {
 			os_Output(i + ": " + options[i], i, 0);
