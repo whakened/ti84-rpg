@@ -15,11 +15,6 @@
 
 using namespace ti::literals; // namespace std; otherwise
 
-int test(void) {
-	os_PutStrFull("MAYBE");
-	return 0;
-}
-
 void os_Output(string text, int row, int column) {
 	os_SetCursorPos(row, column);
 	os_PutStrFull(text);
@@ -48,7 +43,7 @@ void menu(string options) {
 			}
 		}
 		keyPressed = true;
-	}
+	} 
 }
 
 int main(void) {
