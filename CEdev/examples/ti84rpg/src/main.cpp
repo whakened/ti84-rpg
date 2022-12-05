@@ -10,11 +10,12 @@
 #include <string.h>
 #include <stdint.h>
 
-#include <ti/getcsc.h>
+#include <sys/lcd.h>
 #include <ti/tokens.h>
 #include <ti/screen.h>
+#include <keypad.h>
 
-using namespace ti::literals; // namespace std; otherwise
+//using namespace ti::literals; // namespace std; otherwise //???? WHAT DOES THIS DO
 
 int os_Output(char text, uint8_t row, uint8_t column) {
 	os_SetCursorPos(row, column);
