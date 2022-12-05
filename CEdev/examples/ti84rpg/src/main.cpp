@@ -16,9 +16,10 @@
 
 using namespace ti::literals; // namespace std; otherwise
 
-void os_Output(char text, uint8_t row, uint8_t column) {
+int os_Output(char text, uint8_t row, uint8_t column) {
 	os_SetCursorPos(row, column);
 	os_PutStrFull(text);
+	return 0;
 }
 
 /* void menu(char options[]) {
@@ -47,12 +48,11 @@ void os_Output(char text, uint8_t row, uint8_t column) {
 	} 
 } */
 
-void mainMenu(void) {
+int mainMenu(void) {
 	os_Output("1:Test",0,0);
 	os_Output("2:Other",1,0);
 	bool keyPressed = false;
 	bool entered = false;
-	uint8
 	while (!keyPressed) {
 			uint8_t key = os_GetCSC();
 			if (key != sk_Enter) {
@@ -68,6 +68,7 @@ void mainMenu(void) {
 			}
 		}
 	}
+	return 0;
 }
 
 int main(void) {
