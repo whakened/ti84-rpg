@@ -54,7 +54,25 @@ int mainMenu(void) {
 	os_Output("2:Other",1,0);
 	bool keyPressed = false;
 	bool entered = false;
-	while (!keyPressed) {
+	uint8_t selected = 0;
+	kb_key_t key;
+	do {
+		kb_Scan();
+		key = kb_Data[7];
+		switch (key){
+			case kb_Down:
+				if(selected>0){selected-=1;}
+				break;
+
+			case kb_Up:
+				if(selected<1){selected+=1;}
+				break;
+
+			default:
+				break;
+		}
+	} while (kb_Data[6] != kb_Enter);
+	/* while (!keyPressed) {
 			uint8_t key = os_GetCSC();
 			if (key != sk_Enter) {
 				if (key == sk_Down && selected > 0) {
@@ -68,7 +86,7 @@ int mainMenu(void) {
 				entered = true;
 			}
 		}
-	}
+	} */
 	return 0;
 }
 
@@ -77,7 +95,7 @@ int main(void) {
 	struct {
 		uint16_t health = 10;
 		uint8_t weapon = 1;
-		char inventory[14][3];
+		uint8_t inventory[14][3];
 	} playerData;
 
 
