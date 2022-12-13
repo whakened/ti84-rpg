@@ -89,7 +89,7 @@ int mainMenu(void) {
 			}
 		}
 	} */
-	return 0;
+	return selected;
 }
 
 int main(void) {
@@ -100,7 +100,7 @@ int main(void) {
 		uint8_t inventory[14][3];
 	} playerData;
 
-	mainMenu();
+	uint8_t select = mainMenu();
 
 	/*string input;    //declare this variable as a string
 	cin >> input;   //get input from console as variable
